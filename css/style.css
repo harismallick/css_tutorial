@@ -1,0 +1,54 @@
+/* Chapter 1 */
+/* CSS stands to 'cascading style sheets */
+/* As the name suggests, a css file is interpreted line-by-line. Any stylistic rules made downstream will over-ride the rules declared upstream. There are rules to this over-riding process, discussed in chapter 2. */
+p {
+    color: #00FF00;
+}
+/* Chapter 2: Selectors*/
+/*
+There are 4 levels of selectors based on the broadness:
+- body selector: This will alter the apprearance of all the content within the html body
+- element selector: This will only alter the apprearance of the particular element tag (as shown in chapter 1)
+- class selector: This will alter the appearance of a class object. Classes are defined using '.classname' syntax. Any element declared as an instance of this class will be stylised accordingly.
+- id selector: This will alter only a specific element containing a unique id. These should be used sparingly.
+- The heirarchy of specificity is id selector > class selector > element selector > body selector.
+- A downstream element selector can override an upstream rule for the same element, but not an element inheriting from a class or id.
+- This is because specificity takes precedence in CSS.
+- There's also inheritance between selectors. 
+- More specific selectors will inherit attributes from the broader selectors.
+- Each css file should only contain either one 'html', 'main' or 'body' selector. Attributes of these selectors will be inherited by more specific selectors, unless those attributes are changed inside the class or id selector.
+*/
+
+h1, h2, h3 {
+    color: blue;
+}
+/* Separating selectors by commas will apply style to each selector */
+p span {
+    text-transform: uppercase;
+    color: black;
+    background-color: gold;
+}
+/* Separating selectors by only a space will create a nested condition. In this example, the style will only be applied to span elements nested inside paragragh elements */
+.gray {
+    color: gray;
+}
+/* Example of a class selector */
+* {
+    font-family: Times;
+}
+/* The '*' selector will apply style to EVERYTHING. It should only be used in very specific situations, like applying a font family across the complete html page. */
+#test {
+    background-color: pink;
+    text-transform: underline;
+}
+body {
+    font-size: 22px;
+    font-family: arial, sans-serif, helvetica;
+    line-height: 1.5;
+    background-color: darkgray;
+    color: black;
+    color: rgb(0,0,0);
+    color: rgba(0,0,0,0.6); /* The 4th argument is the transparency level of the text. */
+    color: #333333
+}
+/* 4 different ways to declare colors in CSS. */
