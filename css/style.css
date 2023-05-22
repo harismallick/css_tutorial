@@ -3,6 +3,12 @@
 /* As the name suggests, a css file is interpreted line-by-line. Any stylistic rules made downstream will over-ride the rules declared upstream. There are rules to this over-riding process, discussed in chapter 2. */
 p {
     color: #00FF00;
+    font-size: 1.5rem;
+    /* width: 100%; */
+    /* width: 50vw; This will set the width of paragraphs to half the viewport width at all times */
+    min-height: 10vw; /* Each paragraph will take up at minimum 10% of the viewport */
+    background-color:green;
+    font-size: 2rem;
 }
 /* Chapter 2: Selectors*/
 /*
@@ -35,8 +41,14 @@ p span {
 /* Example of a class selector */
 * {
     font-family: Times;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/* The '*' selector will apply style to EVERYTHING. It should only be used in very specific situations, like applying a font family across the complete html page. */
+/* 
+The '*' selector will apply style to EVERYTHING. It should only be used in very specific situations, like applying a font family across the complete html page. 
+The border-box setting ensures that content+padding+border = fixed pixel size
+*/
 #test {
     background-color: pink;
     text-transform: underline;
@@ -52,3 +64,69 @@ body {
     color: #333333
 }
 /* 4 different ways to declare colors in CSS. */
+
+/*
+Chapter 4: Units and sizes in CSS
+
+- There are many different ways to declare the sizes of text elements in CSS. But the preferred practice is to use the pixel units.
+- 1 pixel = 1/96th of an inch.
+- By default, html text is typically 16px. 
+- You DONT want to hard code the text size for the html page as this will prevent the end user from using the browser's feature of choosing between small, medium and large text size from an accessibility perspective.
+- Pixel declarations can be made for objects like lines, borders, padding, etc.
+- So how can one declare font sizes for text without hard coding it as pixels?
+- You can use relative length units, like em, rem, ch, vw, vh (look at mdn page for details on all of them).
+- rem - it is the font size of the root. 2em would be 2x for root font size. 0.5rem would be half. This way, font sizes for different text elements can be made relative to one another.
+- em - Represents the font size of the parent or the element itself.
+
+*/
+h1 {
+    border: 2px dashed red;
+    font-size: 2rem;
+    padding: 0.75em;
+}
+
+/* Chapter 5: Box model in CSS
+
+The box model in html is:
+
+Margin(Border(Padding(Content)Padding)Border)Margin
+
+- The margin is the space to be left around the particular html element before displaying the next element,
+- The border is the box that surrounds the element.
+- The padding is extra space between the html content and the border.
+
+*/
+.chapter5 {
+    border: 2px dashed red;
+    font-size: 2rem;
+    padding: 0.25em;
+    /* width: 50%; */
+    /* margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em; */
+    margin: 1.5em 1.4em 1.5em 3em;
+}
+/*
+Many different settings for altering the margins, border, padding.
+Rather than writing multiple lines for border-left, border-top, etc, one can simply state the values for these as arguments in shorthand as shown in the example above
+*/
+
+.circle {
+    margin:3rem auto;
+    background-color: gold;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+    border-radius: 50px;
+    outline: 2px solid purple;
+    outline-offset: 0.25rem;
+}
+/* The 'border-radius attribute is the key one that converts a box shape into whichever shape desired. For circle, set the pixels to 50*/
+
+/*
+Chapter 6: Typography
+
+What is it?
+- It is defined as the way text is arranged and presented.
+*/
