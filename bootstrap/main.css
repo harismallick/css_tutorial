@@ -1,0 +1,22 @@
+/* :root {
+    --main-bg-color: darkgrey;
+    --main-color: white;
+} */
+
+body {
+    /* background-color: var(--main-bg-color); */
+    /* color: var(--main-color); */
+    background-color: black;
+    color: white;
+}
+.box {
+    background-color: white;
+    color: black;
+    min-height: 50px;
+    text-align: center;
+    align-items: center;
+}
+
+form {
+    color: black;
+}

@@ -1,0 +1,23 @@
+Notes from the bootstrap tutorial
+
+Bootstrap styling is based on a grid, of column and rows.
+There's 3 levels to the grid system:
+- Container
+    - Rows
+    - Columns
+
+Each container has a grid of rows and columns.
+
+Depending on the size of the pixels and the size of the screen, the bootstrap default properties 
+for the container change.
+
+Need to nest a div of class 'col' inside a div of class 'row' inside a div of class 'container' for bootstrap to function.
+Each row has 12 resizable columns in its grid.
+If just 'col' class used, then all declared columns will be resized to equal lengths.
+If certain columns need to be of a particular size, this can be declared in the class name, like: col-6
+This will ensure that the declared column is 50% of the size of the row.
+The other 11 possible rows will be of equal size in the remaining row width.
+
+You can assign an array of class names to each row and column div to behave differently for different screen sizes.
+You can also nest another row class inside a column class, to split that column into more rows.
+

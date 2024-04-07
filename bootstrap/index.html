@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tutorial source: https://www.youtube.com/watch?v=Jyvffr3aCp0&t=139s">
+        <title>Bootstrap Tutorial</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./main.css">
+    </head>
+    <body>
+        <div class="container">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quasi necessitatibus, quae quam quaerat numquam mollitia id laudantium iste eum obcaecati temporibus reprehenderit nisi, sapiente culpa? At, quas repudiandae! Fugit.
+            Nobis sapiente similique porro fugit mollitia hic deserunt voluptatum nulla explicabo incidunt. Veritatis ratione accusamus quis, possimus quaerat tempore, eaque, animi iure ab repellendus ducimus cum sint placeat unde ad?
+            Cum cupiditate non dolores odit? Minima, minus totam incidunt quia aperiam iste rem ea inventore commodi repellendus porro at quidem? Ad delectus quos eius dolore consequatur enim quidem perferendis sapiente!
+        </div>
+        <!-- Adding the container class immediately changed the amount of padding applied to the div-->
+        <!-- Understanding the row column grid-->
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="box">Hello</div>
+                </div>
+                <div class="col-6">
+                    <div class="box">World</div>
+                </div>
+                <div class="col">
+                    <div class="box">Bye</div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="table-responsive"> <!-- This ensures that the table doesn't overflow the screen window. Adds scrollbar to table-->
+                <table class="table table-dark table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr>
+                            <td>Kyle</td>
+                            <td>Cook</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>Sally</td>
+                            <td>Thorn</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>Jim</td>
+                            <td>Smith</td>
+                            <td>28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Next we look at forms -->
+        <div class="container">
+            <form>
+                <label for="email"  class="form-label">Email</label>
+                <br>
+                <input type="email" id="email" class="form-control-md">
+                <br>
+                <label for="name" class="form-label">Username</label>
+                <br>
+                <input type="text" id="name" class="form-control-sm">
+                <br>
+                <button class="btn btn-primary">Submit</button>
+                <br>
+                <select name="options" id="options" class="form-select">
+                    <option value="One">One</option>
+                    <option value="Two">Two</option>
+                </select>
+                <!-- For check boxes, need to wrap inside a form-check class container inside the form-->
+                <div class="form-check">
+                    <input type="checkbox" id="checkbox1" class="form-check-input">
+                    <label for="checkbox1" class="form-check-label">Checkbox</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input type="checkbox" id="checkbox1" class="form-check-input">
+                    <label for="checkbox1" class="form-check-label">Checkbox</label>
+                </div>
+            </form>
+        </div>
+        <!-- Grouping input types together for creative input fields -->
+        <div class="container" id="focus">
+            <form>
+                <label for="text" class="form-label">Amount</label>
+                <div class="input-group">
+                    <div class="input-group-text">$</div>
+                    <input type="number" id="text" class="form-control">
+                    <button class="btn btn-primary">+</button>
+                </div>
+            </form>
+        </div>
+        <!-- example group for inputing a currency ammount -->
+        <!-- Next we look at client-side validation for inputs in form fields -->
+        <br>
+        <div class="container">
+            <form id="validated-form" novalidate>
+                <div class="form-floating"> <!-- This parent class is needed for validating input fields -->
+                    <!-- The label MUST be placed after the input field for this to work correctly -->
+                    <input type="email" id="validate-email" class="form-control" placeholder="Email here..." required>
+                    <label for="validate-email">Email</label>
+                    <div class="invalid-feedback">Invalid email</div>
+                    <div class="valid-feedback">Valid email</div>
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+
+        <!-- Next we look at some of the commonly used components styled with bootstrap-->
+        <!-- Buttons -->
+        
+        <script>
+            // window.location.hash = "focus";
+            const form = document.getElementById("validated-form");
+            form.addEventListener('submit', e => {
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                }
+                form.classList.add('was-validated');
+            });
+        </script>
+    </body>
+</html>
